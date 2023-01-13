@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Result</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='home.css')}}">
+    <script type="text/javascript">
+
+        function validateId() {
+            var course = document.getElementById("course").value;
+            var courseCheck = /^[A-Za-z0-9 .]+$/
+
+            if (course.length == 0) {
+                document.getElementById("id-error").innerHTML = "Enter";
+                return false
+            }
+            if (!course.match(courseCheck)) {
+                document.getElementById("id-error").innerHTML = "Not Valid "
+                return false;
+            }
+            document.getElementById("id-error").innerHTML = " "
+            return true
+        }
+
+        function validateStudent() {
+            var student = document.getElementById("student").value;
+            var studentCheck = /^[0-9]+$/
+
+            if (student.length == 0) {
+                document.getElementById("stu-error").innerHTML = "Enter";
+                return false;
+            }
+            if (!student.match(studentCheck)) {
+                document.getElementById("stu-error").innerHTML = "Not Valid";
+                return false;
+            }
+            document.getElementById("stu-error").innerHTML = " ";
+            return true;
+        }
+
+
+        function validateName() {
+            var students = document.getElementById("students").value;
+            var studentsCheck = /^[A-Za-z .]+$/
+
+            if (students.length == 0 || students.length < 3) {
+                document.getElementById("students-error").innerHTML = "Enter"
+                return false;
+            }
+            if (!students.match(studentsCheck)) {
+                alert("Please enter valid student name");
+                return false;
+            }
+            document.getElementById("students-error").innerHTML = " ";
+            return true;
+        }
+
+        function validateMarks() {
+            var marks = document.getElementById("marks").value;
+            var marksCheck = /^[0-9]+$/
+
+            if (marks.length == 0) {
+                document.getElementById("marks-error").innerHTML = "Enter";
+                return false;
+            }
+            if (!marks.match(marksCheck)) {
+                document.getElementById("marks-error").innerHTML = "Not Valid";
+                return false;
+            }
+            document.getElementById("marks-error").innerHTML = " ";
+            return true;
+        }
+
+        function validateTotal() {
+            var total = document.getElementById("total").value;
+            var totalCheck = /^[0-9]+$/
+
+            if (total.length == 0) {
+                document.getElementById("total-error").innerHTML = "Enter";
+                return false;
+            }
+            if (!total.match(totalCheck)) {
+                document.getElementById("total-error").innerHTML = "Not Valid";
+                return false;
+            }
+            document.getElementById("total-error").innerHTML = " ";
+            return true;
+        }
+
+        function validateButun() {
+            var butun = document.getElementById("butun").value;
+
+            if (!validateId() || !validateStudent() || !validateName() || !validateMarks() || !validateTotal()) {
+                alert("Please fix error to submit")
+                return false;
+            }
+            alert("Your login is Successful")
+            return true;
+        }
+
+    </script>
+</head>
+
+<body>
+    <!--Nav bar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand" href="#"><img
+                src="https://www.vidyavision.com/CollegeUploads/Logos/2020-29-7-15-57-09_sdmlogo.jpg" height="60vh"
+                width="60vh"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="naav" role="button" data-toggle="dropdown"
+                        aria-expanded="false">
+                        Add New
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{url_for('addstudents')}}" id="naavs">Add Student</a>
+                        <a class="dropdown-item" href="{{url_for('addsubjects')}}" id="naavs">Add Subject</a>
+                        <a class="dropdown-item" href="{{url_for('addresult')}}" id="naavs">Add Results</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="naav" role="button" data-toggle="dropdown"
+                        aria-expanded="false">
+                        Records
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{url_for('viewstudent')}}" id="naavs">View Student</a>
+                        <a class="dropdown-item" href="{{url_for('viewsubject')}}" id="naavs">Subject Record</a>
+                        <a class="dropdown-item" href="{{url_for('viewresult')}}" id="naavs">Result Record</a>
+                    </div>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('home')}}" id="naav">Logout<span
+                            class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Add result section-->
+
+    <div class="bgimg5">
+        <div class="layout d-flex flex-column justify-content-center">
+            <div class="container1">
+                <div class="row grid-3">
+                    <div class="col-12">
+                        <div class="format">
+                            <h3 class="heading4 text-center">Add Result</h3>
+                            <form method="POST">
+                                <div class="form-row">
+                                    <div class="col-12 mb-1">
+                                        <label class="para0" for="exampleFormControlInput1">Student Id</label>
+                                        <input type="number" class="form-control" name="student" id="course"
+                                            placeholder="Enter course id" onkeyup="validateId()" />
+                                        <span class="span0" id="id-error"></span>
+                                    </div>
+                                </div>
+                                <!--<div class="form-row">
+                                    <div class="col-12 mb-1">
+                                        <label class="para0" for="exampleInput">Course Id</label>
+                                        <select class="form-control" name="course_id">
+                                            {% for i in subjects %}
+                                            <option>
+                                                {{i[0]}}
+                                            </option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>-->
+                                <div class="form-row">
+                                    <div class="col-12 mb-1">
+                                        <label class="para0" for="exampleInput">Subject</label>
+                                        <select class="form-control" name="subject">
+                                            {% for i in subjects %}
+                                            <option>
+                                                {{i[0]}}
+                                            </option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col-12">
+                                        <label class="para0" for="exampleFormControlInput1">ObtainedMarks </label>
+                                        <input type="number" id="marks" name="obtained" class="form-control"
+                                            placeholder="Enter Marks" onkeyup="validateMarks()" />
+                                        <span class="span0" id="marks-error"></span>
+                                    </div>
+                                </div>
+
+                                <div class="row grid-3">
+                                    <div class="col-12 text-center">
+                                        <div class="row grid-3">
+                                            <div class="col-12 mt-4">
+                                                <button class="btn btn-success" id="butun" onkeyup="validateButun()">Add
+                                                    Result</button>
+                                                <span class="span0" id="butun-error"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

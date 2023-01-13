@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='signin.css')}}">
+    <script type="text/javascript">
+        function validateSecret() {
+            var secret = document.getElementById("secret").value;
+            var fullCheck = /^[A-Za-z0-9]+$/
+
+            if (secret.length == 0 || secret.length < 3) {
+                document.getElementById("secret-error").innerHTML = "Enter"
+                return false;
+            }
+            if (!secret.match(fullCheck)) {
+                document.getElementById("secret-error").innerHTML = "Not Valid"
+                return false;
+            }
+            document.getElementById("secret-error").innerHTML = " ";
+            return true;
+        }
+
+        function validateFirst() {
+            var first = document.getElementById("first").value;
+            var firstCheck = /^[A-Za-z .]+$/
+
+            if (first.length == 0 || first.length < 3) {
+                document.getElementById("first-error").innerHTML = "Enter"
+                return false;
+            }
+            if (!first.match(firstCheck)) {
+                alert("Please enter valid student name");
+                return false;
+            }
+            document.getElementById("first-error").innerHTML = " ";
+            return true;
+        }
+
+
+        function validateUser() {
+            var user = document.getElementById("user").value;
+            var userCheck = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[@#%?&*-+ ]).{8}$/
+
+            if (user.length == 0) {
+                document.getElementById("user-error").innerHTML = "Enter";
+                return false;
+            }
+            if (!user.match(userCheck)) {
+                document.getElementById("user-error").innerHTML = "Not Valid"
+                return false;
+            }
+            document.getElementById("user-error").innerHTML = " "
+            return true
+        }
+
+        function validateEmail() {
+
+            var email = document.getElementById("email").value;
+            var emailCheck = /^[a-zA-z0-9.#]+@[a-z]+\.[a-z]{2,3}$/
+
+            if (email.length == 0) {
+                document.getElementById("mail-error").innerHTML = "Enter"
+                return false;
+            }
+            if (!email.match(emailCheck)) {
+                document.getElementById("mail-error").innerHTML = "Not valid";
+                return false;
+            }
+            document.getElementById("mail-error").innerHTML = " ";
+            return true;
+        }
+
+        function validateMobile() {
+            var mobile = document.getElementById("mobile").value;
+            var mobileCheck = /^[6-9]\d{9}$/
+
+            if (mobile.length == 0) {
+                document.getElementById("mobile-error").innerHTML = "Enter"
+                return false;
+            }
+            if (!mobile.match(mobileCheck)) {
+                document.getElementById("mobile-error").innerHTML = "Not valid"
+                return false;
+            }
+            document.getElementById("mobile-error").innerHTML = " ";
+            return true;
+        }
+
+        function validatePassword() {
+            var password = document.getElementById("password").value;
+            var passwordCheck = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[@#%?&*-+ ]).{10}$/
+            if (password.length == 0) {
+                document.getElementById("password-error").innerHTML = "Enter";
+                return false;
+            }
+
+            if (!password.match(passwordCheck)) {
+                document.getElementById("password-error").innerHTML = "Not Valid";
+                return false;
+            }
+            document.getElementById("password-error").innerHTML = " "
+            return true
+        }
+
+        function validatePasscode() {
+
+            var passcode = document.getElementById("passcode").value;
+            var confirmCheck = /^[A-Za-z ]+$/
+            if (passcode.length == 0) {
+                document.getElementById("passcode-error").innerHTML = "Enter";
+                return false;
+            }
+
+            if (!passcode.match(confirmCheck)) {
+                document.getElementById("passcode-error").innerHTML = "Not Valid";
+                return false;
+            }
+            document.getElementById("passcode-error").innerHTML = " "
+            return true
+        }
+
+        function validateGender() {
+            var gender = document.getElementById("gender").value;
+            var genderCheck = /^[A-Za-z ]+$/
+
+            if (gender.length == 0) {
+                document.getElementById("gender-error").innerHTML = "Enter";
+                return false
+            }
+            if (!gender.match(genderCheck)) {
+                document.getElementById("gender-error").innerHTML = "Not Valid"
+            }
+            document.getElementById("gender-error").innerHTML = " ";
+            return true
+        }
+        function validateButun() {
+            if (!validateSecret() || !validateFirst() || !validateUser() || !validateEmail() || !validateMobile() || !validatePassword() || !validatePasscode() || !validateGender()) {
+                alert("Please fix error to submit")
+                return false;
+            }
+            alert("Your login is Successful")
+            return true;
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <!--Nav bar-->
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand" href="#" id="naav"><img
+                src="https://www.vidyavision.com/CollegeUploads/Logos/2020-29-7-15-57-09_sdmlogo.jpg" height="60vh"
+                width="60vh"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-link active" href="{{url_for('home')}}" id="naav">HOME<span
+                        class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{url_for('student')}}" id="naav">STUDENTS</a>
+                <a class="nav-link" href="{{url_for('adminlogin')}}" id="naav">ADMIN LOGIN</a>
+            </div>
+        </div>
+    </nav>
+
+    <!--Registration Form-->
+    <div class="block">
+        <div class="container">
+            <div class="title">CREATE ANOTHER USER</div>
+            <form action="/signin" method="POST">
+                <div class="user-details">
+                    <div class="input-box">
+                        <label class="details">Secret Key </label>
+                        <input type="text" id="secret" name="secret" placeholder="Enter your name"
+                            onkeyup="validateSecret()" autofocus />
+                        <span id="secret-error"></span>
+                    </div>
+                    <div class="input-box">
+                        <label class="details">Full Name</label>
+                        <input type="text" id="first" name="fname" placeholder="Enter your name"
+                            onkeyup="validateFirst()" />
+                        <span id="first-error"></span>
+                    </div>
+
+                    <div class="input-box">
+                        <label class="details">Username</label>
+                        <input type="text" id="user" name="user" placeholder="Enter your username"
+                            onkeyup="validateUser()" />
+                        <span id="user-error"></span>
+                    </div>
+                    <div class="input-box">
+                        <label class="details">Email</label>
+                        <input type="text" id="email" name="mail" placeholder="Enter your email"
+                            onkeyup="validateEmail()" />
+                        <span id="mail-error"></span>
+                    </div>
+                    <div class="input-box">
+                        <label class="details">Phone Number</label>
+                        <input type="text" id="mobile" name="phone" placeholder="Enter your number"
+                            onkeyup="validateMobile()" />
+                        <span id="mobile-error"></span>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Password</span>
+                        <input type="password" id="password" name="password" placeholder="Enter your password"
+                            onkeyup="validatePassword()">
+                        <span id="password-error"></span>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">PassCode</span>
+                        <input type="text" id="passcode" name="passcode" placeholder="Enter your passcode"
+                            onkeyup="validatePasscode()">
+                        <span id="passcode-error"></span>
+                    </div>
+                    <div class="input-box">
+                        <label class="details">Gender</label>
+                        <input type="text" id="gender" name="gender" placeholder="Enter your gender"
+                            onkeyup="validateGender()" />
+                        <span id="gender-error"></span>
+                    </div>
+                </div>
+                <div class="input-box" id="butun">
+                    <button class="btn btn-primary" id="butun" onkeyup="validateButun()">CREATE</button>
+
+                    <P class="red1"><span id="butun-error"></span></P>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

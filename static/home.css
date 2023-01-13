@@ -1,0 +1,301 @@
+.bgimg1 {
+    background: url("https://2.bp.blogspot.com/-Q7vIHI541-M/W3cEjY5aWoI/AAAAAAAAGVo/Cyikfc2VCVIQsnzq5Lo5CL0J2ioKjpbtQCLcBGAs/s1600/Student%2BResult%2BManagement%2Bsystem%2BFree%2BProject%2Bin%2BPHP%2Band%2BMySQL.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+#naav {
+    color: whitesmoke;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: large;
+    font-weight: bold;
+    padding-right: 30px;
+
+}
+
+#naavs {
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: large;
+    font-weight: bold;
+    padding-right: 30px;
+}
+
+.container {
+    max-width: 500px;
+    background-color: gray;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+.heading1 {
+    color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    padding-bottom: 3%;
+    text-align: center;
+    justify-content: center;
+}
+
+.block {
+    padding-top: 13%;
+}
+
+.forms {
+    color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 20px;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.forms label {
+    width: 30%;
+    /*display: inline-block;*/
+    padding: 10px;
+    text-align: left;
+}
+
+.form-control {
+    height: 45px;
+    width: 235px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 100px;
+    font-size: 16px;
+    margin-left: 180px;
+}
+
+.para1 {
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+
+.section0 {
+    width: 55%;
+}
+
+/*Admin*/
+html,
+body {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+.bgimg2 {
+    background: url("https://www.finaleinventory.com/wp-content/uploads/2022/02/5-reasons-small-businesses-inventory-management-1024x341.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.format {
+    max-width: 500px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: transparent;
+    border-radius: 15px;
+    padding: 10px;
+    border-style: none;
+    margin: 5px;
+    margin-top: 10px;
+    margin-right: 50px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 5%;
+    margin-left: 30%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+.good {
+    font-size: 300%;
+    padding-bottom: 30px;
+}
+
+/*Home Page*/
+
+.bgvedio1 {
+    background: url("https://www.munialajuelita.go.cr/images/2021/07/01/conta-1.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.container2 {
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+
+}
+
+.block1 {
+    padding-top: 10%;
+    padding-left: 10%;
+}
+
+.heaing2 {
+    color: whitesmoke;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+}
+
+.heading3 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: oblique;
+}
+
+.para1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+}
+
+@media screen and (max-width:500px) {
+
+    /*.bgvedio1 {
+        height: 100vh;
+        width: 100%;
+    }
+*/
+    .block1 {
+        padding: 10px;
+    }
+}
+
+/*Add Results page*/
+
+.bgimg5 {
+    background: url("https://www.merittrac.com/sites/default/files/banners_Student%20Result%20Processing%20System.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    height: 100%;
+}
+
+.heading4 {
+    color: rgb(114, 72, 16);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+}
+
+.para0 {
+    color: rgb(114, 72, 16);
+}
+
+.span0 {
+    color: red;
+    font-size: medium;
+    font-weight: lighter;
+}
+
+/*Add Subject*/
+
+.bgimg3 {
+    background: url("https://www.finaleinventory.com/wp-content/uploads/2022/02/5-reasons-small-businesses-inventory-management-1024x341.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+/*Admin login*/
+
+.bgimg4 {
+    background: url("https://pngimage.net/wp-content/uploads/2018/06/vector-blue-background-png-3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.container3 {
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    width: 100%;
+}
+
+.form-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    position: relative;
+    padding: 1px;
+    padding-left: 20px;
+}
+
+.form-row label {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    font-weight: 100;
+    position: relative;
+    width: 100px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+
+}
+
+.form-row input {
+    /*background: transparent;*/
+    border: 0;
+    outline: 0;
+    padding: 10px;
+    border-bottom: 1px solid #999;
+    color: #333;
+    font-size: 16px;
+    flex-basis: 60%;
+}
+
+.forms span {
+    position: bottom;
+    bottom: 12px;
+    right: 17px;
+    font-size: 14px;
+    color: yellow;
+    align-content: space-between;
+}
+
+.link1 {
+    color: rgb(34, 10, 166);
+
+}
+
+.para {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    font-weight: bold;
+}
+
+#click1 {
+    color: white;
+}

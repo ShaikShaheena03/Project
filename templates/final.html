@@ -1,0 +1,24 @@
+{% extends 'viewresult.html' %}
+{% block content %}
+{% if marks == 'empty' %}
+<h1>No result found</h1>
+{% else %}
+<div class="table text-center mt-4 ml-4">
+    <table border="1px" cellpadding="20px" cellspacing="0px">
+        <tr>
+            <th>Student Id</th>
+            <th>Subject Name</th>
+            <th>Obtained Marks</th>
+
+        </tr>
+        {% for i in marks %}
+        <tr>
+            <td>{{i[0]}}</td>
+            <td>{{i[1]}}</td>
+            <td>{{i[2]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endif %}
+{% endblock %}

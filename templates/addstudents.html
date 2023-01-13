@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Students</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='signin.css')}}">
+    <script type="text/javascript">
+
+        function validateId() {
+            var stuid = document.getElementById("stuid").value;
+            var stuidCheck = /^[0-9]+$/
+
+            if (stuid.length == 0) {
+                document.getElementById("stuid-error").innerHTML = "Enter";
+                return false
+            }
+            if (!stuid.match(stuidCheck)) {
+                document.getElementById("stuid-error").innerHTML = "Not Valid "
+                return false;
+            }
+            document.getElementById("stuid-error").innerHTML = " "
+            return true
+        }
+
+        function validateStudent() {
+            var student = document.getElementById("student").value;
+            var studentCheck = /^[A-Za-z .]+$/
+
+            if (student.length == 0 || student.length < 3) {
+                document.getElementById("student-error").innerHTML = "Enter"
+                return false;
+            }
+            if (!student.match(studentCheck)) {
+                document.getElementById("student-error").innerHTML = "Not Valid"
+                return false;
+            }
+            document.getElementById("student-error").innerHTML = " ";
+            return true;
+        }
+
+        function validateFather() {
+            var father = document.getElementById("father").value;
+            var fatherCheck = /^[A-Za-z .]+$/
+
+            if (father.length == 0 || father.length < 3) {
+                document.getElementById("father-error").innerHTML = "Enter"
+                return false;
+            }
+            if (!father.match(fatherCheck)) {
+                alert("Please enter valid father name");
+                return false;
+            }
+            document.getElementById("father-error").innerHTML = " ";
+            return true;
+        }
+
+        function validateMother() {
+            var mother = document.getElementById("mother").value;
+            var motherCheck = /^[A-Za-z .]+$/
+
+            if (mother.length == 0 || mother.length < 3) {
+                document.getElementById("mother-error").innerHTML = "Enter"
+                return false;
+            }
+            if (!mother.match(motherCheck)) {
+                alert("Please enter valid mother name");
+                return false;
+            }
+            document.getElementById("mother-error").innerHTML = " ";
+            return true;
+        }
+
+        function validateNumber() {
+            var number = document.getElementById("number").value;
+            var numberCheck = /^[6-9]\d{9}$/
+
+            if (number.length == 0) {
+                document.getElementById("number-error").innerHTML = "Enter"
+                return false;
+            }
+            if (!number.match(numberCheck)) {
+                document.getElementById("number-error").innerHTML = "Not valid"
+                return false;
+            }
+            document.getElementById("number-error").innerHTML = " ";
+            return true;
+        }
+
+        function validateAddress() {
+            var address = document.getElementById("address").value;
+            var addressCheck = /^[A-Za-z0-9 . -:/\#]+$/
+
+            if (address.length == 0) {
+                document.getElementById("add-error").innerHTML = "Enter"
+                return false;
+            }
+            if (!address.match(addressCheck)) {
+                alert("PLease enter valid address")
+                return false;
+            }
+            document.getElementById("add-error").innerHTML = " ";
+            return true;
+        }
+
+        function validateMail() {
+            var mail = document.getElementById("mail").value;
+            var mailCheck = /^[a-zA-z0-9.#]+@[a-z]+\.[a-z]{2,3}$/
+
+            if (mail.length == 0) {
+                document.getElementById("mail-error").innerHTML = "Enter"
+                return false;
+            }
+            if (!mail.match(mailCheck)) {
+                document.getElementById("mail-error").innerHTML = "Not valid";
+                return false;
+            }
+            document.getElementById("mail-error").innerHTML = " ";
+            return true;
+        }
+
+        function validateAdhar() {
+            var adhar = document.getElementById("adhar").value;
+            var adharCheck = /^[0-9]\d{11}$/
+
+            if (adhar.length == 0) {
+                document.getElementById("adhar-error").innerHTML = "Enter"
+                return false;
+            }
+            if (!adhar.match(adharCheck)) {
+                document.getElementById("adhar-error").innerHTML = "Not valid";
+                return false;
+            }
+
+            document.getElementById("adhar-error").innerHTML = " ";
+            return true;
+        }
+        function validateGender() {
+            var gender = document.getElementById("gender").value;
+            var genderCheck = /^[A-Za-z ]+$/
+
+            if (gender.length == 0) {
+                document.getElementById("gender-error").innerHTML = "Enter";
+                return false
+            }
+            if (!gender.match(genderCheck)) {
+                document.getElementById("gender-error").innerHTML = "Not Valid"
+            }
+            document.getElementById("gender-error").innerHTML = " ";
+            return true
+        }
+
+        function validateForm() {
+            if (!validateStudent() || !validateFather() || !validateMother() || !validateNumber() || !validateAddress() || !validateMail() || !validateAdhar() || !validateGender()) {
+                document.getElementById("boton-error").innerHTML = "Please fix error"
+                return false;
+            }
+            alert("Your data is successfully added")
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <!--Nav bar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand" href="#"><img
+                src="https://www.vidyavision.com/CollegeUploads/Logos/2020-29-7-15-57-09_sdmlogo.jpg" height="60vh"
+                width="60vh"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="naav" role="button" data-toggle="dropdown"
+                        aria-expanded="false">
+                        Add New
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{url_for('addstudents')}}" id="naavs">Add Student</a>
+                        <a class="dropdown-item" href="{{url_for('addsubjects')}}" id="naavs">Add Subject</a>
+                        <a class="dropdown-item" href="{{url_for('addresult')}}" id="naavs">Add Results</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="naav" role="button" data-toggle="dropdown"
+                        aria-expanded="false">
+                        Records
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{url_for('viewstudent')}}" id="naavs">View Student</a>
+                        <a class="dropdown-item" href="{{url_for('viewsubject')}}" id="naavs">Subject Record</a>
+                        <a class="dropdown-item" href="{{url_for('viewresult')}}" id="naavs">Result Record</a>
+                    </div>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('home')}}" id="naav">Logout<span
+                            class="sr-only">(current)</span></a>
+                </li>
+
+
+
+            </ul>
+        </div>
+    </nav>
+
+    <!--Add student block-->
+    <div class="block1">
+        <div class="container1">
+            <div class="title">ADD STUDENTS</div>
+            <form method="POST">
+                <div class="user-details">
+                    <div class="input-box">
+                        <label class="details">Student Id</label>
+                        <input type="text" id="stuid" name="studentId" placeholder="Enter Student Id"
+                            onkeyup="validateId()" />
+                        <span id="stuid-error"></span>
+                    </div>
+                    <div class="input-box">
+                        <label class="details">Student Name</label>
+                        <input type="text" id="student" name="studentName" placeholder="Enter student name"
+                            onkeyup="validateStudent()" />
+                        <span class="span1" id="student-error"></span>
+                    </div>
+                    <div class="input-box">
+                        <label class="details">Father Name</label>
+                        <input type="text" id="father" name="fatherName" placeholder="Enter  father name"
+                            onkeyup="validateFather()">
+                        <span class="span1" id="father-error"></span>
+                    </div>
+                    <div class="input-box">
+                        <label class="details">Mother Name</label>
+                        <input type="text" id="mother" name="motherName" placeholder="Enter  mother name"
+                            onkeyup="validateMother()" />
+                        <span class="span1" id="mother-error"></span>
+                    </div>
+                    <div class="input-box">
+                        <label class="details">Studnet Number</label>
+                        <input type="text" id="number" name="phoneNumber" placeholder="Enter  Phone number"
+                            onkeyup="validateNumber()" />
+                        <span class="span1" id="number-error"></span>
+                    </div>
+                    <div class="input-box">
+                        <label class="details">Address</label>
+                        <input type="text" id="address" name="address" placeholder="Enter address"
+                            onkeyup="validateAddress()" />
+                        <span class="span1" id="add-error"></span>
+                    </div>
+                    <div class="input-box">
+                        <label class="details">Email Id</label>
+                        <input type="text" id="mail" name="emailId" placeholder="Enter Email"
+                            onkeyup="validateMail()" />
+                        <span class="span1" id="mail-error"></span>
+                    </div>
+                    <div class="input-box">
+                        <label class="details">Adhaar Number</label>
+                        <input type="text" id="adhar" name="adharNumber" placeholder="Enter adhaar number"
+                            onkeyup="validateAdhar()" />
+                        <span class="span1" id="adhar-error"></span>
+                    </div>
+                    <div class="input-box">
+                        <label class="details">Gender</label>
+                        <input type="text" id="gender" name="gender" placeholder="Enter your gender"
+                            onkeyup="validateGender()" />
+                        <span id="gender-error"></span>
+                    </div>
+                    <div class="input-box">
+                        <label class="details">Section</label>
+
+                        <select class="form-control" name="section">
+                            <option>msds1</option>
+                            <option>msds2</option>
+
+                            <option>msds3</option>
+
+
+                        </select>
+                    </div>
+
+                </div>
+                <div class="button1">
+                    <input type="submit" id="boton" value="Add Student" onkeyup="validateForm()">
+                    <span id="boton-error"></span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

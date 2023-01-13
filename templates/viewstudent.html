@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Student</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='home.css')}}">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 10%;
+            border: 2 px solid black;
+        }
+
+        th,
+        td {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: left;
+            padding: 8px;
+            border: 2px solid black;
+            min-width: 150px;
+        }
+
+        th {
+            font-size: 15px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .modal-title {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Nav bar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand" href="#"><img
+                src="https://www.vidyavision.com/CollegeUploads/Logos/2020-29-7-15-57-09_sdmlogo.jpg" height="60vh"
+                width="60vh"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="naav" role="button" data-toggle="dropdown"
+                        aria-expanded="false">
+                        Add New
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{url_for('addstudents')}}" id="naavs">Add Student</a>
+                        <a class="dropdown-item" href="{{url_for('addsubjects')}}" id="naavs">Add Subject</a>
+                        <a class="dropdown-item" href="{{url_for('addresult')}}" id="naavs">Add Results</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="naav" role="button" data-toggle="dropdown"
+                        aria-expanded="false">
+                        Records
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{url_for('viewstudent')}}" id="naavs">View Student</a>
+                        <a class="dropdown-item" href="{{url_for('viewsubject')}}" id="naavs">Subject Record</a>
+                        <a class="dropdown-item" href="{{url_for('viewresult')}}" id="naavs">Result Record</a>
+                    </div>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('home')}}" id="naav">Logout<span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <form method="POST" action="{{url_for('studentsearch')}}" class="form-inline">
+                        <input class="form-control mr-sm-2" name="studentId" type="search" placeholder="Search"
+                            aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    <!--View Subjects-->
+
+    <div class="table1 text-center mt-4 ml-4">
+        <h5 class="modal-title" id="exampleModalLongTitle">Delete Student</h5>
+
+        <form method="POST" action="{{url_for('deletestudent')}}">
+            <select class="form-group" name="option">
+                {% for i in students %}
+                <option>{{i[0]}}</option>
+                {% endfor %}
+            </select>
+
+            <button class="btn btn-primary" type="submit">submit</button>
+
+        </form>
+    </div>
+    <div style="overflow-x: auto;" class="layout d-flex flex-column justify-content-center">
+        <div class="container1">
+            <div class="row grid-1">
+                <div class="col-12">
+                    <div class="table text-center mt-4 ml-4">
+                        <table border="2px solid black" cellpadding="20px" cellspacing="0px">
+                            <tr>
+                                <th>Student Id</th>
+                                <th>Student Name</th>
+                                <th>Father Name</th>
+                                <th>Mother Name</th>
+                                <th>Phone Number</th>
+                                <th>Address</th>
+                                <th>Email Id</th>
+                                <th>Adhaar Number</th>
+                                <th>Gender</th>
+                                <th>Section</th>
+                            </tr>
+                            {% for i in students %}
+                            <tr>
+                                <td>{{i[0]}}</td>
+                                <td>{{i[1]}}</td>
+                                <td>{{i[2]}}</td>
+                                <td>{{i[3]}}</td>
+                                <td>{{i[4]}}</td>
+                                <td>{{i[5]}}</td>
+                                <td>{{i[6]}}</td>
+                                <td>{{i[7]}}</td>
+                                <td>{{i[8]}}</td>
+                                <td>{{i[9]}}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
