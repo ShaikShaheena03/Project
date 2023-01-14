@@ -13,6 +13,10 @@ app.config['MYSQL_DB']='RESULTS'
 mysql=MySQL(app)
 
 @app.route('/')
+def welcome():
+    return render_template('welcomepage.html')
+
+@app.route('/home')
 def home():
     return render_template('home.html')
 
