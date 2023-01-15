@@ -5,63 +5,145 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SRMS website</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{url_for('static',filename='home.css')}}">
-
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="home.css">
 </head>
 
 <body>
-    <div class="bgvedio1">
-        <!--Nav bar-->
+    <!--Nav bar-->
+    <div class="bgimg">
+        <div class="bg">
+            <h1 class="font">Results Management System</h1>
+            <!--Nav bar-->
 
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-            <a class="navbar-brand" href="#" id="naav"><img
-                    src="https://www.vidyavision.com/CollegeUploads/Logos/2020-29-7-15-57-09_sdmlogo.jpg" height="60vh"
-                    width="60vh"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav ml-auto">
-                    <a class="nav-link active" href="{{url_for('home')}}" id="naav">HOME<span
-                            class="sr-only">(current)</span></a>
-                    <a class="nav-link" href="{{url_for('student')}}" id="naav">STUDENTS</a>
-                    <a class="nav-link" href="{{url_for('adminlogin')}}" id="naav">ADMIN LOGIN</a>
-                </div>
-            </div>
-        </nav>
-
-
-        <!--Block section-->
-
-        <div class="block1">
-            <div class="layout d-flex flex-row justify-content-left ">
-                <div class="container2">
-                    <div class="column">
-                        <h1 class="heaing2">Results Announcement</h1>
-                        <h3 class="heading3">BSC Fourth Semister Examination Result</h3>
-                        <p class="para1">Result Announced on 2 January 2022</p>
-                        <h3 class="heading3">B.Com Fourth Semister Examination Result</h3>
-                        <p class="para1">Result Announced on 1 January 2022</p>
-                        <h3 class="heading3">BA Fourth Semister Examination Result</h3>
-                        <p class="para1">Result Announced on 5 January 2022</p>
+            <nav class="navbar navbar-expand-lg  alert alert-danger">
+                <a class="navbar-brand" href="#" id="naav"><img
+                        src="https://www.vidyavision.com/CollegeUploads/Logos/2020-29-7-15-57-09_sdmlogo.jpg"
+                        height="60vh" width="60vh"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ml-auto">
+                        <a class="nav-link active" href="{{url_for('home')}}" id="naav">HOME<span
+                                class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{url_for('student')}}" id="naav">STUDENTS</a>
+                        <a class="nav-link" href="{{url_for('adminlogin')}}" id="naav">ADMIN LOGIN</a>
                     </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!--Home-->
+    <div class="bgcolor">
+        <div class="colorbg">
+            <h1 class="fontsize">⭐⭐⭐⭐⭐Results Announcement⭐⭐⭐⭐⭐</h1>
+        </div>
+        <div class="bgm">
+            <div style="padding-right: 800px;">
+                <div style="background-color: white;">
+                    <h1 class="batches">●BSC Fourth Semister Examination Result</h1>
+                    <h5>Result Announced on 30 January 2022</h5>
+                    <h1 class="batches">●B.Com Fourth Semister Examination Result</h1>
+                    <h5>Result Announced on 20 January 2022</h5>
+                    <h1 class="batches">●BA Fourth Semister Examination Result</h1>
+                    <h5>Result Announced on 9 January 2022</h5>
+                    <h1 class="batches">●BBA Fourth Semister Examination Result</h1>
+                    <h5>Result Announced on 17 January 2022</h5>
+                    <h1 class="batches">●BBM Fourth Semister Examination Result</h1>
+                    <h5>Result Announced on 5 January 2022</h5>
                 </div>
             </div>
         </div>
     </div>
+    <div class="d-flex flex-row justify-content-center">
+        <div style="padding-left: 25px;">
+            <div style="background-color:lightblue">
+                <h1 style="font-size: 15px;margin: 50px;background-color:lightblue;text-align: center;padding: 50px;">
+                    <li style="font-size: 30px;">Certified Teachers</li><br>Even the all-powerful has no </br>control
+                    about theblind texts is an almost Unorthographic
+                </h1>
+            </div>
+        </div>
+        <div style="padding-left: 0px;">
+            <div style="background-color: palevioletred;">
+                <h1
+                    style="font-size: 15px;margin: 50px;background-color:palevioletred ;text-align: center;padding: 50px;">
+                    <li style="font-size: 30px;">Book & Library</li><br>Reading is Dreaming with Open eyes.</br>"Today
+                    we welcome the world to our LIBRARY"
+                </h1>
+            </div>
+        </div>
+        <div style="padding-left: 0px;padding-right: 25px;">
+            <div style="background-color:lightblue;">
+                <h1 style="font-size: 15px;margin: 50px;background-color:lightblue ;text-align: center;padding: 50px;">
+                    <li style="font-size: 30px;">Sport Club</li><br>Even all powerful Pointing has no control</br>about
+                    the blind texts it is an almost unorthographic
+                </h1>
+            </div>
+        </div>
+    </div>
+    <!--Contact Us section-->
+    <div id="contactSection">
+        <section id="contact">
+            <div class="con">
+
+                <h1 class="text-center pt-3 pb-4" style="color: white;"> Contact Us</h1>
+                <div class="row mt-4">
+                    <div class="col-12 col-lg-6">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d244820.2475527758!2d80.50514086369554!3d16.51011836707302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35eff9482d944b%3A0x939b7e84ab4a0265!2sVijayawada%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1669619728778!5m2!1sen!2sin"
+                            width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+                    <div class="col-12 col-lg-6">
+
+                        <div class="noti">
+                            <h1
+                                style="background-color: white;font-size: 18px;font-family:Arial, Helvetica, sans-serif;padding-left: 0px;padding-right:0px;color: blue;">
+                                <l
+                                    style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size: 40px;padding-left: 250px;color: darkgreen;">
+                                    <u>Notification</u>
+                                </l>
+                                <marquee scrollamount="3" behavior="continue" height="100px" direction="up" loop="0">💡
+                                    Siddhartha scholar scholarship"for students of Andhra pradesh year in national
+                                    institutes.</br>
+                                    <l>💡 Career Guidance and Placement Cell invites oon CAMPUS DRIVE by MEDI</l>
+                                    healthcare 10th Feb,2023.</br>
+                                    <l>💡 The Department of Computer Science Organizes a state level Technical
+                                        event"TECHSPARK-2K on 01-020-2023</l><br>💡 4-Semester end practical
+                                    examinations Commenced from 6th Jan,2023</br>
+                                    <l></l>
+                                </marquee>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <div class="cont" id="icenter1">
+        <div class="socialicons mt-4">
+            <a href="https://wwww.facebook.com/" target="_blank"> <i class="fa-brands fa-facebook"> </i> </a>
+            <a href="https://www.instagram.com/" target="_blank"> <i class="fa-brands fa-instagram"> </i> </a>
+            <a href="https:/www.linkedin.com/" target="_blank"> <i class="fa-brands fa-linkedin"> </i> </a>
+            <a href="https://wwww.twitter.com/" target="_blank"> <i class="fa-brands fa-twitter"> </i> </a>
+        </div>
+    </div>
+    </section>
+    </div>
 
 
-
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
 </body>
 

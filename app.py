@@ -46,8 +46,8 @@ def final():
             cursor.execute("SELECT count(*) from marks where stud_id=%s",[student])
             count=cursor.fetchall()
             cursor.close()
-             return render_template('final.html',student=count)
-    return render_template('final.html',student=count
+            return render_template('final.html',student=count)
+    return render_template('final.html',student=count)
 
 @app.route('/adminlogin',methods=['GET','POST'])
 def adminlogin():

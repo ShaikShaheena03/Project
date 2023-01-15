@@ -1,3 +1,132 @@
+/*Homepage*/
+.bg {
+    background-image: url("https://as2.ftcdn.net/v2/jpg/02/31/19/57/1000_F_231195790_EDfh0c6FfqDH3G2KFrv3RI4EqSSfJ8jN.jpg");
+    background-repeat: repeat;
+}
+
+.font {
+    text-align: center;
+    font-size: 80px;
+    font-weight: 100;
+    font-family: fantasy;
+    color: crimson;
+    padding-top: 100px;
+    padding-bottom: 110px;
+}
+
+#no {
+    color: rgb(61, 139, 125);
+    font-family: fantasy;
+    font-size: 20px;
+    font-weight: 100;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#no:hover {
+    color: black;
+}
+
+#hi {
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+    font-weight: 100;
+    padding-left: 800px;
+    padding-right: 2px;
+}
+
+#hi:hover {
+    color: blue;
+}
+
+#go {
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+
+#go:hover {
+    color: blue;
+}
+
+.bgcolor {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 2000wh;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.colorbg {
+    background-color: cadetblue;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    padding-left: 100px;
+}
+
+.fontsize {
+    text-align: center;
+    padding-right: 50px;
+}
+
+.bgm {
+    background-image: url("https://cdn-icons-png.flaticon.com/512/463/463433.png?w=740&t=st=1673630531~exp=1673631131~hmac=e77dcc9feb8a64edd0340401e580da2de9f2fb34069e09362dfb5357cc04b650");
+    background-repeat: space;
+    border-image: auto;
+    padding-left: 0px;
+}
+
+.batches {
+    color: crimson;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.batches:hover {
+    color: blue;
+}
+
+#contact {
+    padding-bottom: 4rem;
+    padding-left: 30px;
+}
+
+.socialicons {
+    font-size: 40px;
+    cursor: pointer;
+
+}
+
+.fa-brands {
+    color: black;
+}
+
+.fa-brands:hover {
+    color: red;
+}
+
+.fa-facebook,
+.fa-instagram,
+.fa-linkedin,
+.fa-twitter {
+    margin: 60px;
+    color: red;
+}
+
+.noti {
+    background-image: url("https://img.freepik.com/free-photo/environment-green-watercolor-background-with-leaf-border-illustration_53876-105302.jpg?w=740&t=st=1673642100~exp=1673642700~hmac=0f1d774495434fb8145ef44ad822a6627e9a777e23d61aa5eed886435b48ed88");
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+/*hnj*/
 .bgimg1 {
     background: url("https://2.bp.blogspot.com/-Q7vIHI541-M/W3cEjY5aWoI/AAAAAAAAGVo/Cyikfc2VCVIQsnzq5Lo5CL0J2ioKjpbtQCLcBGAs/s1600/Student%2BResult%2BManagement%2Bsystem%2BFree%2BProject%2Bin%2BPHP%2Band%2BMySQL.jpg");
     background-repeat: no-repeat;
