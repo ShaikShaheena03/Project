@@ -20,6 +20,10 @@ def welcome():
 def home():
     return render_template('home.html')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 @app.route('/student',methods=['GET','POST'])
 def student():
     if request.method=='POST':
@@ -47,11 +51,11 @@ def final():
             return render_template('final.html',student='empty')
         else:
             cursor=mysql.connection.cursor()    
-            cursor.execute("SELECT count(*) from marks where stud_id=%s",[student])
+            cursor.execute("SELECT * from marks where stud_id=%s",[student])
             count=cursor.fetchall()
             cursor.close()
             return render_template('final.html',student=count)
-    return render_template('final.html',student=count)
+    return render_template('final.html')
 
 @app.route('/adminlogin',methods=['GET','POST'])
 def adminlogin():
@@ -93,21 +97,6 @@ def signin():
             return redirect(url_for('adminlogin'))     
     return render_template('signin.html')
 
-@app.route('/addsubjects',methods=['GET','POST'])
-def addsubjects():
-    if request.method=='POST':
-        section=request.form['section']
-        courseid=request.form['course']
-        subjectName=request.form['subjectName']
-        totalMarks=request.form['totalMarks']
-        cursor=mysql.connection.cursor()
-        #query=f"insert into {section} (subject,total_marks) values('{subjectName}',{totalMarks})"
-        cursor.execute('insert into subjects(section,course_id,subject,total_marks) values(%s,%s,%s,%s)',[section,courseid,subjectName,totalMarks])
-        mysql.connection.commit()
-        cursor.close()
-        return redirect(url_for('addsubjects'))
-    return render_template('addsubjects.html')
-
 @app.route('/addstudents',methods=['GET','POST'])
 def addstudents():
     if request.method=='POST':
@@ -125,20 +114,29 @@ def addstudents():
         cursor.execute('insert into students(studentId,studentName,fatherName,motherName,phoneNumber,address,emailId,adharNumber,gender,section) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',[studentId,studentName,fatherName,motherName,phoneNumber,address,emailId,adharNumber,gender,section])
         mysql.connection.commit()
         cursor.close()
-        return redirect(url_for('addstudents'))
+        return redirect(url_for('addsubjects'))
     return render_template('addstudents.html')
+
+@app.route('/addsubjects',methods=['GET','POST'])
+def addsubjects():
+    if request.method=='POST':
+        section=request.form['section']
+        courseid=request.form['course']
+        subjectName=request.form['subjectName']
+        totalMarks=request.form['totalMarks']
+        cursor=mysql.connection.cursor()
+        #query=f"insert into {section} (subject,total_marks) values('{subjectName}',{totalMarks})"
+        cursor.execute('insert into subjects(section,course_id,subject,total_marks) values(%s,%s,%s,%s)',[section,courseid,subjectName,totalMarks])
+        mysql.connection.commit()
+        cursor.close()
+        return redirect(url_for('addresult'))
+    return render_template('addsubjects.html')
 
 @app.route('/addresult',methods=['GET','POST'])
 def addresult():
     cursor=mysql.connection.cursor()
     cursor.execute('select subject from subjects')
     data=cursor.fetchall()
-    '''cursor=mysql.connection.cursor()
-    cursor.execute('select subject from msds2')
-    data1=cursor.fetchall()
-    cursor=mysql.connection.cursor()
-    cursor.execute('select subject from msds3')
-    data2=cursor.fetchall()'''
     subjects=data 
     if request.method=='POST':
         studentId=request.form['student']
@@ -213,7 +211,7 @@ def subjectsearch():
             count=cursor.fetchall()
             cursor.close()
             return render_template('searchbar_subjects.html',course=count)
-    return render_template('searchbar_subjects.html',course=count)
+    return render_template('searchbar_subjects.html')
 
 @app.route('/deletesubject',methods=['POST'])
 def deletesubject():
@@ -250,7 +248,7 @@ def resultsearch():
             count=cursor.fetchall()
             cursor.close()
             return render_template('searchbar_result.html',studentid=count)
-        return render_template('searchbar_result.html',studentid=count)
+        return render_template('searchbar_result.html')
         
 @app.route('/deleteresult',methods=['POST'])
 def deleteresult():

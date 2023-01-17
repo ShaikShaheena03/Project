@@ -73,7 +73,7 @@
 
 .fontsize {
     text-align: center;
-    padding-right: 50px;
+    padding-left: 50px;
 }
 
 .bgm {
@@ -126,9 +126,53 @@
     padding-bottom: 100px;
 }
 
+***ABOUT**/ .abt {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.word {
+    background-image: url("https://img.freepik.com/free-vector/christmas-background_87374-142.jpg?w=996&t=st=1673648010~exp=1673648610~hmac=8a1cf6b47d123bd5c7fa3d316ab8b077dc2f837c78a930cfc9e61dd91fbdc11d");
+    background-repeat: repeat-x;
+}
+
+.clg {
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 50px;
+    color: darkgreen;
+}
+
+.points {
+    text-align: center;
+    font-size: 15px;
+    padding-right: 40px;
+    padding-left: 40px;
+    color: purple;
+}
+
+.w {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 30px;
+}
+
+.pics {
+    padding-left: 600px;
+    padding-right: 600px;
+    padding-bottom: 20px;
+}
+
+.img6 {
+    width: 300px;
+    padding: 10px
+}
+
 /*hnj*/
 .bgimg1 {
-    background: url("https://2.bp.blogspot.com/-Q7vIHI541-M/W3cEjY5aWoI/AAAAAAAAGVo/Cyikfc2VCVIQsnzq5Lo5CL0J2ioKjpbtQCLcBGAs/s1600/Student%2BResult%2BManagement%2Bsystem%2BFree%2BProject%2Bin%2BPHP%2Band%2BMySQL.jpg");
+    background: url("https://t4.ftcdn.net/jpg/03/21/09/07/240_F_321090768_4rGy0wYi3lB98iTMELBEtOn8AqbbTJrO.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;

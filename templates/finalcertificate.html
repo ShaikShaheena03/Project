@@ -18,44 +18,37 @@
             font-weight: lighter;
             text-decoration: none;
         }
+
+        .image {
+            width: 100%;
+        }
     </style>
 </head>
 
 <body>
     <div class="bgvedio1">
         <!--Nav bar-->
-        <div class="img">
-            <h1 class="score"><u>Student Results</u></h1>
-            <nav class="navbar navbar-expand-lg alert alert-anger">
-                <a class="navbar-brand" href="#" id="hi"><img
-                        src="https://www.siddharthamahila.ac.in/images/sdm_logo.jpg" alt="sdm_logo" width="50%"></a>
+        <div>
+            <img class="image" src="https://www.siddharthamahila.ac.in/images/sdm_logo.jpg" alt="">
+
         </div>
-        </nav>
         <!--Block section-->
 
         <div style="padding-top: 16px;width: 2000wh;padding-left: 28px;padding-right: 28px;padding-bottom: 70px;">
             <div class="bgcolor">
                 <form method="POST" action="final">
+                    <h1 class="score"><u>Student Results</u></h1>
                     <div class="rank">
-
-                        <h2
-                            style="font-size: 20px;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-weight:100;padding-left: 30px;padding-top: 80px;">
-                            Student Id : </h2>
-                        <h2
-                            style="font-size: 20px;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-weight:100;padding-left: 30px;padding-top: 10px;">
-                            Section : </h2>
-
-
                         {% block content %}
-
-                        <div style="padding-left: 390px;padding-bottom: 20px;">
+                        <div style="padding-bottom: 20px;">
                             <div class="table text-center mt-4 ml-4">
-                                <table border="2px" cellpadding="20px" cellspacing="10px">
+                                <table class="tab" border="5px" align="center">
 
                                     <tr>
-                                        <th>Subject</th>
+                                        <th>Student Id</th>
+                                        <th>Subject Name</th>
                                         <th>Obtained Marks</th>
-                                        <th>Total Marks</th>
+
                                     </tr>
                                     {% for i in Marks %}
                                     <tr>
