@@ -75,6 +75,7 @@
                     <a class="nav-link active" href="{{url_for('home')}}" id="naav">HOME<span
                             class="sr-only">(current)</span></a>
                     <a class="nav-link" href="{{url_for('student')}}" id="naav">STUDENTS</a>
+                    <a class="nav-link" href="{{url_for('adminlogin')}}" id="naav">ADMIN LOGIN</a>
                 </div>
             </div>
         </nav>
@@ -86,10 +87,10 @@
                 <div class="container ">
                     <div class="column">
                         <h1 class="heading1">Results</h1>
-                        <form method="POST" action="{{url_for('student')}}">
+                        <form method="POST">
                             <div class="forms">
                                 <label>Student Id</label>
-                                <input type="text" id="studentid" name="student" placeholder="Enter your id"
+                                <input type="text" id="studentid" name="number" placeholder="Enter your id"
                                     onkeyup="validateid()" />
                             </div>
                             <div class="forms">
@@ -98,20 +99,20 @@
 
                             <div class="forms">
                                 <label>Section</label>
-                                <select class="section0" name="section1">
-                                    <option>msds1</option>
-                                    <option>msds2</option>
-
-                                    <option>msds3</option>
-
+                                <select name="section1">
+                                    {% for i in section %}
+                                    <option>
+                                        {{i[0]}}
+                                    </option>
+                                    {% endfor %}
                                 </select>
                             </div>
                             <div class="forms">
                                 <span id="section-error"></span>
                             </div><br>
                             <div class="forms">
-                                <a href="finalcertificate.html"><button class="btn btn-primary" id="click"
-                                        onclick="return validateForm()">Submit</button></a>
+                                <button class="btn btn-primary" id="click"
+                                    onclick="return validateForm()">Submit</button>
                             </div>
                             <div class="forms">
                                 <span id="subit-error"></span>
