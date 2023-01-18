@@ -28,15 +28,14 @@ def about():
 def student():
     if request.method=='POST':
         student=request.form['student']
-        section=request.form['section1']
         cursor=mysql.connection.cursor()
         cursor.execute('SELECT * from marks where stud_id=%s',[student])
-        data=cursor.fetchall() 
+        data=cursor.fetchall()
         cursor.close()
-        if student==student:
-            return redirect(url_for('final'))
+        if len(data)==0:
+            return 'No data Found'
         else:
-            return render_template('student.html')
+            return render_template('finalcertificate.html',data=data)
     return render_template('student.html')
 
 @app.route('/finalcertificate',methods=['GET','POST'])
@@ -195,23 +194,23 @@ def viewsubject():
     return render_template('viewsubject.html',subjects=subjects)
 
 
-@app.route('/subjectsearch',methods=['GET','POST'])
+@app.route('/subjectsearch',methods=['POST'])
 def subjectsearch():
     if request.method=='POST':
-        course=request.form['course']
+        subjects=request.form['course']
         cursor=mysql.connection.cursor()
-        cursor.execute('select count(*) from subjects where course_id=%s',[course])
+        cursor.execute('select count(*) from subjects where course_id=%s',[subjects])
         count=int(cursor.fetchone()[0])
         cursor.close()
         if count==0:
-            return render_template('searchbar_subjects.html',course='empty')
+            return render_template('searchbar_subject.html',subjects='empty')
         else:
             cursor=mysql.connection.cursor()
-            cursor.execute('select * from subjects where course_id=%s',[course])
+            cursor.execute('select * from subjects where course_id=%s',[subjects])
             count=cursor.fetchall()
             cursor.close()
-            return render_template('searchbar_subjects.html',course=count)
-    return render_template('searchbar_subjects.html')
+            return render_template('searchbar_subject.html',subjects=count)
+    return render_template('searchbar_subject.html')
 
 @app.route('/deletesubject',methods=['POST'])
 def deletesubject():
@@ -235,30 +234,31 @@ def viewresult():
 @app.route('/resultsearch',methods=['POST'])
 def resultsearch():
     if request.method=='POST':
-        studentid=request.form['studentId']
+        marks=request.form['studentId']
         cursor=mysql.connection.cursor()
-        cursor.execute('select count(*) from marks where stud_id=%s',[studentid])
+        cursor.execute('select count(*) from marks where stud_id=%s',[marks])
         count=int(cursor.fetchone()[0])
         cursor.close()
         if count==0:
-            return render_template('searchbar_result.html',studentid='empty')
+            return render_template('searchbar_result.html',marks='empty')
         else:
             cursor=mysql.connection.cursor()
-            cursor.execute('select * from marks where stud_id=%s',[studentid])
+            cursor.execute('SELECT * from marks where stud_id=%s',[marks])
             count=cursor.fetchall()
             cursor.close()
-            return render_template('searchbar_result.html',studentid=count)
+            return render_template('searchbar_result.html',marks=count)
         return render_template('searchbar_result.html')
         
 @app.route('/deleteresult',methods=['POST'])
 def deleteresult():
     if request.method=='POST':
         print(request.form)
-        subject=request.form['option2'].split()
+        result=request.form['option2'].split()
         cursor=mysql.connection.cursor()
-        cursor.execute('delete from marks where stud_id=%s',[subject[0]])
+        cursor.execute('delete from marks where stud_id=%s',[result[0]])
         mysql.connection.commit()
         cursor.close()
         return redirect(url_for('viewresult'))
+
 
 app.run(debug=True)
