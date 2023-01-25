@@ -86,9 +86,9 @@
             <div class="layout d-flex flex-row justify-content-center ">
                 <div class="container ">
                     <div class="column">
-                        <h1 class="heading1">Results</h1>
+                        <h1 class="heading1">RESULTS</h1>
                         <form method="POST" action="{{url_for('student')}}">
-                            <div class="forms">
+                            <div class="forms" id="form0">
                                 <label>Student Id</label>
                                 <input type="text" id="studentid" name="student" placeholder="Enter your id"
                                     onkeyup="validateid()" />
@@ -97,7 +97,7 @@
                                 <span id="id-error"></span>
                             </div>
 
-                            <div class="forms">
+                            <div class="forms" id="form0">
                                 <label>Section</label>
                                 <select class="section0" name="section1">
                                     <option>msds1</option>
@@ -110,7 +110,7 @@
                             <div class="forms">
                                 <span id="section-error"></span>
                             </div><br>
-                            <div class="forms">
+                            <div class="forms" id="form5">
                                 <a href="finalcertificate.html"><button class="btn btn-primary" id="click"
                                         onclick="return validateForm()">Submit</button></a>
                             </div>

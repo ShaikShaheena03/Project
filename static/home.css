@@ -217,7 +217,7 @@
     font-family: 'Times New Roman', Times, serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 40px;
     padding-bottom: 25px;
     text-align: center;
     justify-content: center;
@@ -225,27 +225,16 @@
     border-radius: 90px;
 }
 
-.container {
-    max-width: 500px;
-    background-color: white;
-    border-radius: 30px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-    padding-top: 20px;
-    background-color: grey;
+#form0 {
+    padding-bottom: 1%;
 }
 
-.heading1 {
-    color: floralwhite;
-    font-family: 'Times New Roman', Times, serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 30px;
-    padding-bottom: 25px;
-    text-align: center;
-    justify-content: center;
-    padding-top: 30px;
-    border-radius: 90px;
+#form5 {
+    padding-top: px;
+    padding-bottom: 5%;
 }
+
+
 
 .use {
     padding-top: 15px;
