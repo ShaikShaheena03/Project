@@ -150,7 +150,8 @@
 
     <!--Add result section-->
 
-    <div class="bgimg5">
+
+    <div class="bgimg6">
         <div class="layout d-flex flex-column justify-content-center">
             <div class="container1">
                 <div class="row grid-3">
@@ -160,7 +161,7 @@
                             <form method="POST">
                                 <div class="form-row">
                                     <div class="col-12 mb-1">
-                                        <label class="para0" for="exampleFormControlInput1">Student Id</label>
+                                        <label id="para0">StudentId</label>
                                         <input type="number" class="form-control" name="student" id="course"
                                             placeholder="Enter course id" onkeyup="validateId()" />
                                         <span class="span0" id="id-error"></span>
@@ -180,7 +181,7 @@
                                 </div>-->
                                 <div class="form-row">
                                     <div class="col-12 mb-1">
-                                        <label class="para0" for="exampleInput">Subject</label>
+                                        <label id="para0" for="exampleInput">Subject</label>
                                         <select class="form-control" name="subject">
                                             {% for i in subjects %}
                                             <option>
@@ -193,7 +194,8 @@
 
                                 <div class="form-row">
                                     <div class="col-12">
-                                        <label class="para0" for="exampleFormControlInput1">ObtainedMarks </label>
+                                        <label id="para0" for="exampleFormControlInput1">ObtainedMarks
+                                        </label>
                                         <input type="number" id="marks" name="obtained" class="form-control"
                                             placeholder="Enter Marks" onkeyup="validateMarks()" />
                                         <span class="span0" id="marks-error"></span>
@@ -218,7 +220,6 @@
             </div>
         </div>
     </div>
-
 
 
 
