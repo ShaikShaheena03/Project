@@ -126,7 +126,8 @@
     padding-bottom: 100px;
 }
 
-***ABOUT**/ .abt {
+/*ABOUT*/
+.abt {
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -134,6 +135,7 @@
 .word {
     background-image: url("https://img.freepik.com/free-vector/christmas-background_87374-142.jpg?w=996&t=st=1673648010~exp=1673648610~hmac=8a1cf6b47d123bd5c7fa3d316ab8b077dc2f837c78a930cfc9e61dd91fbdc11d");
     background-repeat: repeat-x;
+    width: 100%;
 }
 
 .clg {
@@ -170,7 +172,13 @@
     padding: 10px
 }
 
-/*hnj*/
+.clickme {
+    padding: 5%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+
+/*Admin login*/
 .bgimg1 {
     background: url("https://t4.ftcdn.net/jpg/03/21/09/07/240_F_321090768_4rGy0wYi3lB98iTMELBEtOn8AqbbTJrO.jpg");
     background-repeat: no-repeat;
@@ -197,21 +205,80 @@
 
 .container {
     max-width: 500px;
-    background-color: gray;
-    border-radius: 10px;
+    background-color: white;
+    border-radius: 30px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-    padding: 20px;
+    padding-top: 20px;
+    background-color: grey;
 }
 
 .heading1 {
-    color: whitesmoke;
+    color: floralwhite;
     font-family: 'Times New Roman', Times, serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 50px;
-    padding-bottom: 3%;
+    font-size: 30px;
+    padding-bottom: 25px;
     text-align: center;
     justify-content: center;
+    padding-top: 30px;
+    border-radius: 90px;
+}
+
+.container {
+    max-width: 500px;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    padding-top: 20px;
+    background-color: grey;
+}
+
+.heading1 {
+    color: floralwhite;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    padding-bottom: 25px;
+    text-align: center;
+    justify-content: center;
+    padding-top: 30px;
+    border-radius: 90px;
+}
+
+.use {
+    padding-top: 15px;
+    padding-bottom: 7px;
+    padding-left: 15px;
+    padding-right: 10px;
+    background-color: pink;
+
+}
+
+.lock {
+    padding-top: 15px;
+    padding-bottom: 7px;
+    padding-left: 15px;
+    padding-right: 10px;
+    background-color: pink;
+}
+
+#username {
+    padding-top: 10px;
+    padding-bottom: 6x;
+    padding-left: 50px;
+}
+
+#password {
+    padding-top: 10px;
+    padding-bottom: 6x;
+    padding-left: 50px;
+}
+
+#click {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .block {
@@ -226,7 +293,7 @@
     font-size: 20px;
     text-align: center;
     justify-content: center;
-
+    padding-bottom: 2%;
 }
 
 .forms label {
